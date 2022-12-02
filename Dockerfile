@@ -19,16 +19,16 @@ RUN --mount=type=cache,target=/var/cache/apt --mount=type=cache,target=/var/lib/
 # This allows us to copy in the source in a different layer which in turn allows us to leverage Docker's layer caching
 # That means that if our dependencies don't change rebuilding is much faster
 WORKDIR /build
-RUN cargo new rust-end-to-end-application
-WORKDIR /build/rust-end-to-end-application
+RUN cargo new crack-hash
+WORKDIR /build/crack-hash
 COPY Cargo.toml Cargo.lock ./
-RUN --mount=type=cache,id=cargo-only,target=/build/rust-end-to-end-application/target \
+RUN --mount=type=cache,id=cargo-only,target=/build/crack-hash/target \
     cargo build --release --target ${TARGET}
 
 # now we copy in the source which is more prone to changes and build it
 COPY src ./src
 # --release not needed, it is implied with install
-RUN --mount=type=cache,id=full-build,target=/build/rust-end-to-end-application/target \
+RUN --mount=type=cache,id=full-build,target=/build/crack-hash/target \
     cargo install --path . --target ${TARGET} --root /output
 
 FROM alpine:3.17.0@sha256:8914eb54f968791faf6a8638949e480fef81e697984fba772b3976835194c6d4
@@ -37,5 +37,5 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 USER appuser
 
 WORKDIR /app
-COPY --from=builder /output/bin/rust-end-to-end-application /app
-ENTRYPOINT ["/app/rust-end-to-end-application"]
+COPY --from=builder /output/bin/crack-hash /app
+ENTRYPOINT ["/app/crack-hash"]
