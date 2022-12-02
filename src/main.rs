@@ -26,6 +26,29 @@ fn main() {
     }
 }
 
+// #include <QCryptographicHash>
+// #include <QString>
+// #include <iostream>
+//
+// int main(int argc, char *argv[]) {
+//     QCryptographicHash hash(QCryptographicHash::Sha224);
+//     hash.addData(QStringLiteral("mQcLvEg1HW8JuRXY3BawjSpe").toUtf8());//a salt
+//     hash.addData(QStringLiteral("000000000000000000000000000nHj").toUtf8());
+//     const QByteArray result=hash.result();
+//
+//     std::cout << "length: " << result.length() << std::endl;
+//
+//     for (int i = 0; i < result.length(); i++) {
+//         std::cout << (unsigned int)(unsigned char)result[i] << std::endl;
+//     }
+//
+//     std::cout << QString(result).data() << std::endl;;
+//
+//     if (result.at(0)==0x00 && result.at(1)==0x00) {
+//         std::cout << "winner!" << std::endl;;
+//     }
+// }
+
 struct Permutator<T> {
     range: T,
 }
