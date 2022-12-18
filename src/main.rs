@@ -1,7 +1,6 @@
 #![cfg_attr(not(debug_assertions), deny(warnings))]
 
-use sha2::Digest;
-use sha2::Sha224;
+use sha2::{Digest, Sha224};
 
 fn main() {
     let start = "mQcLvEg1HW8JuRXY3BawjSpe".as_bytes().to_vec();
@@ -55,8 +54,7 @@ struct Permutator<T> {
 
 impl<T> Permutator<T>
 where
-    T: Iterator<Item = u8>,
-    T: Clone,
+    T: Iterator<Item = u8> + Clone,
 {
     fn permutate(&self, v: &[u8], current: usize, max: usize) -> Option<Vec<u8>> {
         let r = hash(v);
