@@ -19,11 +19,11 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: returntocorp/semgrep@sha256:a6e19d2466c23e8d6a95102882649cc7a2fdc1440874287debeeb62d8dcb77ef
+      image: returntocorp/semgrep@sha256:4569a843328958ef6f651a06b9696fbbc4c844d7d8a174fe22fb9b9795802db1
 
     steps:
       - name: Check out repo
-        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3.1.0
+        uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
 
       - name: Run semgrep
         shell: bash
@@ -34,6 +34,6 @@ jobs:
 
       - name: Upload SARIF file for GitHub Advanced Security Dashboard
         if: always()
-        uses: github/codeql-action/upload-sarif@b2a92eb56d8cb930006a1c6ed86b0782dd8a4297 # v2.1.35
+        uses: github/codeql-action/upload-sarif@959cbb7472c4d4ad70cdfe6f4976053fe48ab394 # v2.1.37
         with:
           sarif_file: semgrep.sarif
