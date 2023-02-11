@@ -8,8 +8,8 @@
     "release": "semantic-release"
   },
   "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=8.0.0"
+    "node": ">=v18.14.0",
+    "npm": ">=9.4.2"
   },
   "repository": {
     "type": "git",
@@ -23,14 +23,14 @@
   "homepage": "https://github.com/kristof-mattei/crack-hash#readme",
   "devDependencies": {
     "@actions/tool-cache": "^2.0.1",
-    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/commit-analyzer": "^9.0.2",
-    "@semantic-release/github": "^8.0.5",
+    "@semantic-release/github": "^8.0.7",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "conventional-changelog-conventionalcommits": "^5.0.0",
-    "prettier": "^2.7.1",
-    "semantic-release": "^20.0.0",
-    "semver": "^7.3.7",
+    "prettier": "^2.8.4",
+    "semantic-release": "^20.1.0",
+    "semver": "^7.3.8",
     "serialize-error": "^11.0.0"
   },
   "publishConfig": {
