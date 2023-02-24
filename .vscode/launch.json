@@ -9,11 +9,7 @@
             "request": "launch",
             "name": "Debug executable 'crack-hash'",
             "cargo": {
-                "args": [
-                    "build",
-                    "--bin=crack-hash",
-                    "--package=crack-hash"
-                ],
+                "args": ["build", "--bin=crack-hash", "--package=crack-hash"],
                 "filter": {
                     "name": "crack-hash",
                     "kind": "bin"
