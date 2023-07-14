@@ -18,8 +18,8 @@
             "args": [],
             "cwd": "${workspaceFolder}",
             "env": {
-                "RUST_BACKTRACE": "1",
-                "RUST_LOG": "crack_hash=trace"
+                "RUST_BACKTRACE": "full",
+                "RUST_LOG": "trace,crack_hash=trace"
             }
         },
         {
@@ -41,8 +41,8 @@
             "args": [],
             "cwd": "${workspaceFolder}",
             "env": {
-                "RUST_BACKTRACE": "1",
-                "RUST_LOG": "crack_hash=trace"
+                "RUST_BACKTRACE": "full",
+                "RUST_LOG": "trace,crack_hash=trace"
             }
         }
     ]

@@ -7,7 +7,9 @@
 
 use sha2::{Digest, Sha224};
 
-fn main() {
+fn main() -> Result<(), color_eyre::Report> {
+    color_eyre::install()?;
+
     let start = "mQcLvEg1HW8JuRXY3BawjSpe".as_bytes().to_vec();
 
     let numbers = 48u8..=57;
@@ -28,6 +30,8 @@ fn main() {
             break;
         }
     }
+
+    Ok(())
 }
 
 // #include <QCryptographicHash>
